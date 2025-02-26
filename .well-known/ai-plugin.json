@@ -13,7 +13,7 @@
     },
     "api": {
       "type": "openapi",
-      "url": "https://github.com/LeoPinto2002/my-plugin.files.git/.well-known/openapi.yaml",
+      "url": "https://leopinto2002.github.io/my-plugin.files/.well-known/openapi.yaml",
       "is_user_authenticated": true
     }
   }
