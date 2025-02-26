@@ -1,0 +1,20 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "AD User Creator",
+    "name_for_model": "ad_user_creator",
+    "description_for_human": "Plugin zur Erstellung von Active Directory Benutzern über ein PowerShell-Skript.",
+    "description_for_model": "Plugin zur Erstellung von AD-Benutzern. Es nimmt Benutzerparameter entgegen und ruft einen REST-Endpoint auf, der ein PowerShell-Skript zur AD-Benutzererstellung ausführt.",
+    "auth": {
+      "type": "service_http",
+      "authorization_type": "bearer",
+      "verification_tokens": {
+        "openai": "DALE_2002"
+      }
+    },
+    "api": {
+      "type": "openapi",
+      "url": "https://github.com/LeoPinto2002/my-plugin.files.git/.well-known/openapi.yaml",
+      "is_user_authenticated": true
+    }
+  }
+  
