@@ -1,0 +1,56 @@
+openapi: 3.0.1
+info:
+  title: AD User Creator API
+  version: "1.0"
+paths:
+  /createUser:
+    post:
+      summary: Erstelle einen neuen AD-Benutzer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                samAccountName:
+                  type: string
+                  description: "Neuer SAM-Account-Name"
+                givenName:
+                  type: string
+                  description: "Vorname"
+                surname:
+                  type: string
+                  description: "Nachname"
+                displayName:
+                  type: string
+                  description: "Anzeigename"
+                templateUser:
+                  type: string
+                  description: "Vorlagen-Benutzer (SAM-Account)"
+                locationCode:
+                  type: string
+                  description: "Standortcode zur Bestimmung der OU"
+              required:
+                - samAccountName
+                - givenName
+                - surname
+                - displayName
+      responses:
+        '200':
+          description: Benutzer erfolgreich erstellt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  output:
+                    type: string
+        '400':
+          description: Ungültige Anfrage
+        '401':
+          description: Nicht autorisiert
+        '500':
+          description: Serverfehler
